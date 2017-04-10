@@ -17,15 +17,15 @@ export function objectToFormData(obj, form, namespace) {
             if(namespace){
                 formKey = namespace + '[' + property + ']'
             } else {
-                formKey = property
+                formKey = property;
             }
 
             if(obj[property] instanceof Array){
                 for(var i = 0; i < obj[property].length; i++) {
-                    objectToFormData(obj[property[i]], fd, `${property}[${i}]`)
+                    objectToFormData(obj[property][i], fd, `${property}[${i}]`)
                 }
             } else if(typeof obj[property] === 'object' && !(obj[property] instanceof File)) {
-                objectToFormData(obj[property], fd, property)
+                objectToFormData(obj[property], fd, property);
             } else{
                 fd.append(formKey, obj[property])
             }

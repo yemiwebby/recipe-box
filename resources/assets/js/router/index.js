@@ -17,6 +17,7 @@ const router = new VueRouter({
        {path:'/register', component: Register},
        {path:'/login', component: Login}
    ]
+    //mode: 'history'
 });
 
 export default router
